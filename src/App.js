@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
+import NowPlaying from './Component/nowPlaying/NowPlaying';
 
 function App() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YWM1MjIzMWRlNjEwYjZkN2M5Nzk1NDZhYjM1NDU1YyIsInN1YiI6IjY0YTk2NTgxYjY4NmI5MDEyZjg2NWRmMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bOjnC9zNEG8WgX52oHxPJv3WakuVHcVby0WvCzopEeE'
+      }
+    };
+
+    fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+      .then(response => response.json())
+      .then(data => setMovies(data.results))
+      .catch(err => console.error(err));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <NowPlaying />
     </div>
   );
 }
