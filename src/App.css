@@ -1,0 +1,63 @@
+
+*{
+    box-sizing: border-box;
+    
+}
+body{
+    margin: 0;
+    background-color: #657073;
+     font-family: "Poppins", sans-serif;
+     
+}
+
+
+body::-webkit-scrollbar {/* hide scroll iframe but keep Functionality*/
+    display: none;
+  }
+
+
+
+  header{
+    background-color: #0615de;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+   
+   
+}
+
+#main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    z-index: 999;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
