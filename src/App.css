@@ -11,7 +11,7 @@ body{
 }
 
 
-body::-webkit-scrollbar {/* hide scroll iframe but keep Functionality*/
+body::-webkit-scrollbar {/* hide scroll iframe but keep Functionality ===*/
     display: none;
   }
 
