@@ -29,7 +29,7 @@ function Popular() {
 
   const handleScrollLeft = () => {
     if (movieContainerRef.current) {
-      movieContainerRef.current.scrollLeft -= 200; // Adjust the scroll amount as needed
+      movieContainerRef.current.scrollLeft -= 200; // Adjust the scroll amount as needed ....
     }
   };
 

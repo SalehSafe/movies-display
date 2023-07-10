@@ -4,7 +4,7 @@ import './NowPlaying.css';
 function NowPlaying() {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
-
+//some commit
   useEffect(() => {
     const options = {
       method: 'GET',
